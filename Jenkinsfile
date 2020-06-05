@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('analysis') {
+      steps {
+        withSonarQubeEnv(installationName: 'withSonarQubeEnv', credentialsId: 'SonarQube-Server')
+      }
+    }
+
   }
 }
